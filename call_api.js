@@ -3,7 +3,7 @@ var channels = ["freecodecamp","beardageddon","clamtaco"];
 function getChannelInfo() {
   channels.forEach(function(channel) {
     function makeURL(type, name) {
-      var client_id =
+      var client_id = config.TWITCH_CLIENT_ID
       return 'https://api.twitch.tv/kraken/streams/' + channel + '?' + client_id;
     };
     $.getJSON(makeURL("streams", channel), function(data) {
